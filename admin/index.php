@@ -51,7 +51,7 @@ exit();
 					<i class="icon-reorder shaded"></i>
 				</a>
 
-			  	<a class="brand" href="index.html">
+			  	<a class="brand" href="index.php">
 			  		CMS | Admin
 			  	</a>
 
@@ -59,7 +59,7 @@ exit();
 				
 					<ul class="nav pull-right">
 
-						<li><a href="http://localhost/Complaint Management System/">
+						<li><a href="http://localhost/Complaint-Management-System/">
 						Back to Portal
 						
 						</a></li>

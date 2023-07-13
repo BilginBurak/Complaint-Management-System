@@ -100,14 +100,8 @@
         <hr>
 
         <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; 2020 CMS</p>
-                </div>
-            </div>
-            <!-- /.row -->
-        </footer>
+        <?php include("footer.php");?>
+        
         <style> .col-lg-12{text-align: center; border: 1px solid black;}</style>
 
     </div>
