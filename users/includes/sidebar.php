@@ -1,6 +1,6 @@
 
 <aside class="sidebar">
-  <div id="sidebar" class="nav-collapse">
+  <div id="sidebar" class="nav-collapse" style="overflow: hidden; outline: none; margin-top:-50px;">
     <!-- sidebar menu start-->
     <ul class="sidebar-menu" id="nav-accordion">
 
@@ -9,7 +9,7 @@
       while($row=mysqli_fetch_array($query)) 
       {
       ?> 
-      <p class="centered"><a href="profile.php"><img src="<?php echo htmlentities($row['userImage']);?>" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="profile.php"><img src="assets/img/ui-sam.jpg" class="rounded-circle" width="60"></a></p>
       <h5 class="centered"><?php echo htmlentities($row['fullName']);?></h5>
       <?php } ?>
 
@@ -34,7 +34,7 @@
       <li class="sub-menu">
         <a href="register-complaint.php">
           <i class="fa fa-book"></i>
-          <span>Lodge Complaint</span>
+          <span>Create Complaint</span>
         </a>
       </li>
       

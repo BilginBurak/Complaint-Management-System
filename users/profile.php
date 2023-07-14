@@ -43,7 +43,7 @@ $errormsg="Profile not updated !!";
     <title>CMS | User Change Password</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <!--external css-->
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="assets/js/bootstrap-datepicker/css/datepicker.css" />
@@ -55,123 +55,90 @@ $errormsg="Profile not updated !!";
 
   <body>
 
-  <section id="container" >
-     <?php include("includes/header.php");?>
-      <?php include("includes/sidebar.php");?>
-      <section id="main-content">
-          <section class="wrapper">
-          	<h3><i class="fa fa-angle-right"></i> Profile info</h3>
-          	
-          	<!-- BASIC FORM ELELEMNTS -->
-          	<div class="row mt">
-          		<div class="col-lg-12">
-                  <div class="form-panel">
-                  	
-
-                      <?php if($successmsg)
-                      {?>
-                      <div class="alert alert-success alert-dismissable">
-                       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                      <b>Well done!</b> <?php echo htmlentities($successmsg);?></div>
-                      <?php }?>
-
-   <?php if($errormsg)
-                      {?>
-                      <div class="alert alert-danger alert-dismissable">
- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                      <b>Oh snap!</b> </b> <?php echo htmlentities($errormsg);?></div>
-                      <?php }?>
- <?php $query=mysqli_query($bd, "select * from users where userEmail='".$_SESSION['login']."'");
- while($row=mysqli_fetch_array($query)) 
- {
- ?>                     
-
-  <h4 class="mb"><i class="fa fa-user"></i>&nbsp;&nbsp;<?php echo htmlentities($row['fullName']);?>'s Profile</h4>
-    <h5><b>Last Updated at :</b>&nbsp;&nbsp;<?php echo htmlentities($row['updationDate']);?></h5>
-                      <form class="form-horizontal style-form" method="post" name="profile" >
-
-<div class="form-group">
-<label class="col-sm-2 col-sm-2 control-label">Full Name</label>
-<div class="col-sm-4">
-<input type="text" name="fullname" required="required" value="<?php echo htmlentities($row['fullName']);?>" class="form-control" >
- </div>
-<label class="col-sm-2 col-sm-2 control-label">User Email </label>
- <div class="col-sm-4">
-<input type="email" name="useremail" required="required" value="<?php echo htmlentities($row['userEmail']);?>" class="form-control" readonly>
-</div>
- </div>
-
-
-<div class="form-group">
-<label class="col-sm-2 col-sm-2 control-label">Contact</label>
- <div class="col-sm-4">
-<input type="text" name="contactno" required="required" value="<?php echo htmlentities($row['contactNo']);?>" class="form-control">
-</div>
-<label class="col-sm-2 col-sm-2 control-label">Address </label>
-<div class="col-sm-4">
-<textarea  name="address" required="required" class="form-control"><?php echo htmlentities($row['address']);?></textarea>
-</div>
-</div>
-
-<div class="form-group">
-<label class="col-sm-2 col-sm-2 control-label">State</label>
-<div class="col-sm-4">
-<select name="state" required="required" class="form-control">
-<option value="<?php echo htmlentities($row['State']);?>"><?php echo htmlentities($st=$row['State']);?></option>
-<?php $sql=mysqli_query($bd, "select stateName from state ");
-while ($rw=mysqli_fetch_array($sql)) {
-  if($rw['stateName']==$st)
-  {
-    continue;
-  }
-  else
-  {
-  ?>
-  <option value="<?php echo htmlentities($rw['stateName']);?>"><?php echo htmlentities($rw['stateName']);?></option>
-<?php
-}}
-?>
-
-</select>
-</div>
-<label class="col-sm-2 col-sm-2 control-label">Country </label>
-<div class="col-sm-4">
-<input type="text" name="country" required="required" value="<?php echo htmlentities($row['country']);?>" class="form-control">
-</div>
-</div>
-
-
-<div class="form-group">
-<label class="col-sm-2 col-sm-2 control-label">Pincode</label>
-<div class="col-sm-4">
-<input type="text" name="pincode" maxlength="6" required="required" value="<?php echo htmlentities($row['pincode']);?>" class="form-control">
-</div>
-<label class="col-sm-2 col-sm-2 control-label">Reg Date </label>
-<div class="col-sm-4">
-<input type="text" name="regdate" required="required" value="<?php echo htmlentities($row['regDate']);?>" class="form-control" readonly>
- </div>
-</div>
-
-
-<?php } ?>
-
-                          <div class="form-group">
-                           <div class="col-sm-10" style="padding-left:25% ">
-<button type="submit" name="submit" class="btn btn-primary">Submit</button>
-</div>
-</div>
-
-                          </form>
-                          </div>
-                          </div>
-                          </div>
-                          
-          	
-          	
-		</section>
-      </section>
-    <?php include("includes/footer.php");?>
+  <section id="container">
+  <?php include("includes/header.php");?>
+  <?php include("includes/sidebar.php");?>
+  <section id="main-content">
+    <section class="wrapper">
+      <h3><i class="fa fa-angle-right"></i> Profile Info</h3>
+      <!-- BASIC FORM ELEMENTS -->
+      <div class="row mt">
+        <div class="col-lg-12">
+          <div class="card" style="height: auto;">
+            <div class="card-body" >
+              <?php if($successmsg) { ?>
+                <div class="alert alert-success alert-dismissable">
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  <b>Well done!</b> <?php echo htmlentities($successmsg);?>
+                </div>
+              <?php } ?>
+              <?php if($errormsg) { ?>
+                <div class="alert alert-danger alert-dismissable">
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  <b>Oh snap!</b> <?php echo htmlentities($errormsg);?>
+                </div>
+              <?php } ?>
+              <?php $query=mysqli_query($bd, "select * from users where userEmail='".$_SESSION['login']."'");
+              while($row=mysqli_fetch_array($query)) {
+              ?>
+                <h4 class="card-title"><i class="fa fa-user"></i>&nbsp;&nbsp;<?php echo htmlentities($row['fullName']);?>'s Profile</h4>
+                <h5><b>Last Updated at :</b>&nbsp;&nbsp;<?php echo htmlentities($row['updationDate']);?></h5>
+                <form class="row g-3" method="post" name="profile" >
+                  <div class="col-md-6">
+                    <label for="full-name" class="form-label">Full Name</label>
+                    <input type="text" name="fullname" required="required" value="<?php echo htmlentities($row['fullName']);?>" class="form-control" id="full-name">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="user-email" class="form-label">User Email</label>
+                    <input type="email" name="useremail" required="required" value="<?php echo htmlentities($row['userEmail']);?>" class="form-control" id="user-email" readonly>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="contact-no" class="form-label">Contact</label>
+                    <input type="text" name="contactno" required="required" value="<?php echo htmlentities($row['contactNo']);?>" class="form-control" id="contact-no">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="address" class="form-label">Address</label>
+                    <textarea name="address" required="required" class="form-control" id="address"><?php echo htmlentities($row['address']);?></textarea>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="state" class="form-label">State</label>
+                    <select name="state" required="required" class="form-control" id="state">
+                      <option value="<?php echo htmlentities($row['State']);?>"><?php echo htmlentities($st=$row['State']);?></option>
+                      <?php $sql=mysqli_query($bd, "select stateName from state ");
+                      while ($rw=mysqli_fetch_array($sql)) {
+                        if($rw['stateName']==$st) {
+                          continue;
+                        } else { ?>
+                          <option value="<?php echo htmlentities($rw['stateName']);?>"><?php echo htmlentities($rw['stateName']);?></option>
+                        <?php }
+                      }?>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="country" class="form-label">Country</label>
+                    <input type="text" name="country" required="required" value="<?php echo htmlentities($row['country']);?>" class="form-control" id="country">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="pincode" class="form-label">Pincode</label>
+                    <input type="text" name="pincode" maxlength="6" required="required" value="<?php echo htmlentities($row['pincode']);?>" class="form-control" id="pincode">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="reg-date" class="form-label">Reg Date</label>
+                    <input type="text" name="regdate" required="required" value="<?php echo htmlentities($row['regDate']);?>" class="form-control" id="reg-date" readonly>
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                  </div>
+                </form>
+              <?php } ?>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </section>
+</section>
+<?php include("footer.php");?>
 
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>

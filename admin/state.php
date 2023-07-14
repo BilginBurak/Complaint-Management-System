@@ -32,7 +32,7 @@ if(isset($_GET['del']))
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Admin| State</title>
+	<title>Admin | City</title>
 	<link type="text/css" href="css/bootstrap.min.css" rel="stylesheet">
 	<link type="text/css" href="css/theme.css" rel="stylesheet">
 	<link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
@@ -50,7 +50,7 @@ if(isset($_GET['del']))
 
           <div class="module">
             <div class="module-head">
-              <h3>State</h3>
+              <h3>City</h3>
             </div>
             <div class="module-body">
 
@@ -72,7 +72,7 @@ if(isset($_GET['del']))
 
               <form class="row" name="Category" method="post">
                 <div class="col-md-6 mb-3">
-                  <label class="form-label" for="state">State Name</label>
+                  <label class="form-label" for="state">City Name</label>
                   <input type="text" class="form-control" id="state" placeholder="Enter State Name" name="state" required>
                 </div>
 
@@ -92,14 +92,14 @@ if(isset($_GET['del']))
 
           <div class="module">
             <div class="module-head">
-              <h3>Manage States</h3>
+              <h3>Manage City</h3>
             </div>
             <div class="module-body table-responsive">
               <table class="datatable-1 table table-bordered table-striped">
                 <thead>
                   <tr>
                     <th>#</th>
-                    <th>State</th>
+                    <th>City</th>
                     <th>Description</th>
                     <th>Creation date</th>
                     <th>Last Updated</th>

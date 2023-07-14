@@ -65,7 +65,7 @@
     <ul class="widget widget-menu list-group">
       <li><a href="category.php"><i class="menu-icon icon-tasks"></i> Add Category </a></li>
       <li><a href="subcategory.php"><i class="menu-icon icon-tasks"></i> Add Sub-Category </a></li>
-      <li><a href="state.php"><i class="menu-icon icon-paste"></i> Add State</a></li>
+      <li><a href="state.php"><i class="menu-icon icon-paste"></i> Add City</a></li>
     </ul><!--/.widget-nav-->
 
     <ul class="widget widget-menu list-group">

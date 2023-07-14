@@ -20,7 +20,7 @@ else{
     <title>CMS | Complaint History</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <!--external css-->
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
         
@@ -45,7 +45,7 @@ else{
 
       <section id="main-content">
           <section class="wrapper">
-          	<h3><i class="fa fa-angle-right"></i>Your Complaint Hstory</h3>
+          	<h3><i class="fa fa-angle-right"></i>Your Complaint History</h3>
 		  		<div class="row mt">
 			  		<div class="col-lg-12">
                       <div class="content-panel">
@@ -103,7 +103,7 @@ if($status=="closed") {
 
 		</section><! --/wrapper -->
       </section><!-- /MAIN CONTENT -->
-<?php include("includes/footer.php");?>
+<?php include("footer.php");?>
   </section>
 
     <!-- js placed at the end of the document so the pages load faster -->

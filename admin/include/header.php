@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-secondary fixed-top">
   <div class="container">
     <a class="navbar-brand" href="user-logs.php">
-      CMS | Admin
+      Complaint Management
     </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">

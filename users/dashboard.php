@@ -46,9 +46,11 @@ if (strlen($_SESSION['login']) == 0) {
       <section id="main-content">
         <section class="wrapper">
           <div class="row px-5">
-            <div class="row col-lg-9 main-chart">
+            <div class="row col-lg-9 main-chart align-items-center">
+
 
               <div class="col col-md-2 col-sm-2 box0 bg-danger-subtle m-2">
+              <a href="complaint-history.php">
                 <div class="box1 ">
                   <span class="li_news"></span>
                   <?php
@@ -61,9 +63,14 @@ if (strlen($_SESSION['login']) == 0) {
                   <p class="text-primary">
                     <?php echo htmlentities($num1); ?> Complaints not Process yet
                   </p>
+                  </a>
                 </div>
               <?php } ?>
+
+
+
               <div class="col col-md-2 col-sm-2 box0 bg-warning-subtle m-2">
+              <a href="complaint-history.php">
                 <div class="box1">
                   <span class="li_news"></span>
                   <?php
@@ -77,12 +84,18 @@ if (strlen($_SESSION['login']) == 0) {
                   <p class="text-primary">
                     <?php echo htmlentities($num1); ?> Complaints Status in process
                   </p>
+                  </a>
                 </div>
               <?php } ?>
-              <div class="col col-md-2 col-sm-2 box0 bg-success-subtle m-2">
-                <div class="box1">
-                  <span class="li_news"></span>
-                  <?php
+
+
+
+
+  <div class="col col-md-2 col-sm-2 box0 bg-info-subtle m-2">
+  <a href="complaint-history.php">
+    <div class="box1">
+      <span class="li_news"></span>
+      <?php
                   $status = "closed";
                   $rt = mysqli_query($bd, "SELECT * FROM tblcomplaints where userId='" . $_SESSION['id'] . "' and  status='$status'");
                   $num1 = mysqli_num_rows($rt); { ?>
@@ -93,8 +106,36 @@ if (strlen($_SESSION['login']) == 0) {
                   <p class="text-primary">
                     <?php echo htmlentities($num1); ?> Complaint has been closed
                   </p>
+                </a>
                 </div>
-              <?php } ?>
+                <?php } ?>
+
+
+
+                <div class="col col-md-2 col-sm-2 box0 bg-primary-subtle m-2">
+  <a href="complaint-history.php">
+    <div class="box1">
+      <span class="li_news"></span>
+      <?php
+                  $status = "closed";
+                  $rt = mysqli_query($bd, "SELECT * FROM tblcomplaints where userId='" . $_SESSION['id'] . "'");
+                  $num1 = mysqli_num_rows($rt); { ?>
+                    <h3>
+                      Total
+                    </h3>
+                  </div>
+                  <p class="text-primary">
+                    Total <?php echo htmlentities($num1); ?> Complaint 
+                  </p>
+                </a>
+                </div>
+                <?php } ?>
+
+
+
+
+                
+
             </div><!-- /row mt -->
           </div>
         </section>
