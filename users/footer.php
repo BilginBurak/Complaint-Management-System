@@ -4,7 +4,7 @@
 
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start ">
                 <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
-                    <img src="img/logo.png" height="30px" alt="Logo" />
+                    <img src="assets/img/logo.png" height="30px" alt="Logo" />
                 </a>
                 <p class="ms-2 "><a class="text-body nav-link" href="index.php">Complaint Management</a></p>
             </div>

@@ -10,12 +10,14 @@
    <!-- font awesome cdn link  -->
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/">
+   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/buttons/">
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
    <!-- custom admin css file link  -->
    <link rel="stylesheet" href="css/headers.css">
    <link rel="stylesheet" href="css/carousel.css">
-   <link rel="stylesheet" href="css\bootstrap.min.css">
+   <link rel="stylesheet" href="css/bootstrap.min.css">
 
 
 

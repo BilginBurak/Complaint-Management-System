@@ -8,8 +8,10 @@ if(isset($_POST['submit']))
 	$password=md5($_POST['password']);
 	$contactno=$_POST['contactno'];
 	$status=1;
-	$query=mysqli_query($bd, "insert into users(fullName,userEmail,password,contactNo,status) values('$fullname','$email','$password','$contactno','$status')");
+	$randomCode = rand(100, 999);
+	$query=mysqli_query($bd, "insert into users(fullName,userEmail,password,contactNo,status,code) values('$fullname','$email','$password','$contactno','$status','$randomCode')");
 	$msg="Registration successfull. Now You can login !";
+	echo "<script>alert('$randomCode');</script>";
 }
 ?>
 

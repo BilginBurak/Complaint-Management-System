@@ -35,58 +35,36 @@ window.print();
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>User Profile</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <link href="anuj.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
-<div style="margin-left:50px;">
- <form name="updateticket" id="updatecomplaint" method="post"> 
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
-    <tr>
-      <td  >&nbsp;</td>
-      <td >&nbsp;</td>
-    </tr>
-    <tr height="50">
-      <td><b>Complaint Number</b></td>
-      <td><?php echo htmlentities($_GET['cid']); ?></td>
-    </tr>
-    <tr height="50">
-      <td><b>Status</b></td>
-      <td><select name="status" required="required">
-      <option value="">Select Status</option>
-      <option value="in process">In Process</option>
-    <option value="closed">Closed</option>
-        
-      </select></td>
-    </tr>
-
-
-      <tr height="50">
-      <td><b>Remark</b></td>
-      <td><textarea name="remark" cols="50" rows="10" required="required"></textarea></td>
-    </tr>
-    
-
-
-        <tr height="50">
-      <td>&nbsp;</td>
-      <td><input type="submit" name="update" value="Submit"></td>
-    </tr>
-
-
-
-       <tr><td colspan="2">&nbsp;</td></tr>
-    
-    <tr>
-  <td></td>
-      <td >   
-      <input name="Submit2" type="submit" class="txtbox4" value="Close this window " onClick="return f2();" style="cursor: pointer;"  /></td>
-    </tr>
-   
-
- 
-</table>
- </form>
+<div style="margin: 10px 25px;">
+  <form name="updateticket" id="updatecomplaint" method="post"> 
+    <div class="mb-3">
+      <label class="form-label" for="complaint-number">Complaint Number</label>
+      <input class="form-control" id="complaint-number" type="text" value="<?php echo htmlentities($_GET['cid']); ?>" readonly>
+    </div>
+    <div class="mb-3">
+      <label class="form-label" for="status">Status</label>
+      <select class="form-select" id="status" name="status" required>
+        <option value="">Select Status</option>
+        <option value="in process">In Process</option>
+        <option value="closed">Closed</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label class="form-label" for="remark">Remark</label>
+      <textarea class="form-control" id="remark" name="remark" rows="10" required></textarea>
+    </div>
+    <div class="mb-3">
+      <button class="btn btn-primary" type="submit" name="update">Submit</button>
+    </div>
+    <div class="mb-3">
+      <button class="btn btn-secondary" type="submit" name="Submit2" onClick="return f2();">Close this window</button>
+    </div>
+  </form>
 </div>
 
 </body>
